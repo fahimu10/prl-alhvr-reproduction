@@ -1,0 +1,50 @@
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+Copyright (c) 2026 Fahim Uddin
+
+This work is licensed under the Creative Commons Attribution-NonCommercial
+4.0 International License (CC BY-NC 4.0).
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format
+  - Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor
+    endorses you or your use.
+  - NonCommercial — You may not use the material for commercial purposes.
+  - No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing
+    anything the license permits.
+
+No warranties are given. The license may not give you all of the
+permissions necessary for your intended use.
+
+Full legal text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by-nc/4.0/
+
+---
+
+## Note on upstream code
+
+This repository ports and adapts source code from the official ALHVR
+implementation (github.com/ziziyao/ALHVR, "Adaptive Learning of
+High-Value Regions for Semi-Supervised Medical Image Segmentation" by
+Tao Lei, Ziyao Yang, Xingwu Wang, Yi Wang, Xuan Wang, Feiman Sun, Asoke K.
+Nandi). That upstream repository does not declare a license of its own
+(no LICENSE file present as of this project's clone date), meaning it is
+under default copyright with no explicit permission granted for reuse or
+redistribution.
+
+The CC BY-NC 4.0 license above applies to this repository's own original
+work (the γ_c class-aware threshold extension, documentation, scripts,
+and any code written for this project). The files under `src/` that are
+direct ports of upstream ALHVR code (each names its upstream source in
+its module docstring) remain
+subject to whatever rights the original ALHVR authors hold, independent
+of this license — this project does not claim to grant permissions the
+upstream authors themselves have not granted. This project exists for
+academic/course purposes; if you are the ALHVR authors and have concerns
+about this usage, please open an issue.

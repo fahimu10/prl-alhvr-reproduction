@@ -1,0 +1,37 @@
+# Install PyTorch FIRST, separately, matched to your CUDA driver:
+#     https://pytorch.org/get-started/locally/
+# It is deliberately not pinned here. The correct build depends on the
+# machine's CUDA version, and on an HPC cluster you must use the site's
+# prebuilt module (e.g. `module load python/pytorch2.6py3.12` on NHR@FAU
+# TinyGPU) rather than pip - installing torch over a module's environment
+# re-fights the CUDA matching the module already solved.
+# Developed against torch 2.13.0 (local) and 2.6 (cluster module).
+
+# --- direct dependencies (imported by src/) ---
+numpy==2.5.1              # everywhere
+scipy==1.18.0             # ndimage.zoom - augmentation and resizing
+h5py==3.16.0              # the .h5 dataset format
+SimpleITK==2.5.6          # reading raw ACDC NIfTI, writing predictions
+MedPy==0.5.2              # dc / hd95 / asd metrics
+tqdm==4.70.0              # training progress bars
+matplotlib==3.11.1        # src/evaluation/make_figures.py, plot_training.py
+
+# --- Part 2 only: alternative encoders ---------------------------------------
+# timm's features_only=True returns a list of feature maps, which is exactly
+# the interface src/models/unet.py's Encoder provides - so an encoder swap
+# keeps ALHVR's (out, out_aux, fea, fea_aux) contract without touching the
+# decoder. Pure Python, so installing it cannot disturb the CUDA-matched torch.
+# NOTE: cluster compute nodes have no internet, so any pretrained weights must
+# be fetched on the login node first (TIMM/HF cache under $HOME).
+timm==1.0.29
+
+# --- transitive, pinned for reproducibility ---
+# Pulled in by MedPy / scikit-image; nothing in src/ imports them directly.
+# Left pinned so a fresh install resolves to the versions this project was
+# developed and tested against.
+scikit-image==0.26.0
+ImageIO==2.37.4
+lazy-loader==0.5
+nibabel==5.4.2
+pillow==12.3.0
+tifffile==2026.7.31

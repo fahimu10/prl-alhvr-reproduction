@@ -1,0 +1,51 @@
+# --- datasets, run outputs, generated artefacts ------------------------------
+data/
+outputs/
+outputs_archive/
+reports/
+presentation/
+configs/
+# local staging copy of outputs/ for upload
+hf-upload/
+*.pth
+*.ckpt
+*.tar
+
+# --- reference clone (git clone https://github.com/ziziyao/ALHVR) -----------
+reference/
+
+# --- secrets and machine-local settings -------------------------------------
+.env
+.env.*
+!.env.example
+slurm/env.sh
+
+# --- logs ---------------------------------------------------------------------
+logs/
+*.log
+# Slurm job output - piles up in whatever dir you submit from
+slurm-*.out
+wandb/
+
+# --- Python -------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- virtual environments ---------------------------------------------------
+.venv/
+venv/
+env/
+
+# --- IDE / tools ---------------------------------------------------------------
+.idea/
+.vscode/
+.claude/
+
+# --- OS cruft -----------------------------------------------------------------
+.DS_Store
+Thumbs.db
